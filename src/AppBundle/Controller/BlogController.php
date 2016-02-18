@@ -5,8 +5,9 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Blog;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 /**
  * Class BlogController
@@ -43,10 +44,10 @@ class BlogController extends Controller
         $blog = new Blog();
 
         $form = $this->createFormBuilder($blog)
-            ->add('title', 'text', array('label' => '标题: '))
-            ->add('content', 'textarea', array('attr' => array('class' => 'ceshi')
-            , 'label' => ' '))
-            ->add('submit', 'submit', array('label' => '发博文'))
+            ->add('title',TextType::class, ['label' => '标题: '])
+            ->add('content',TextType::class,['attr' => ['class' => 'ceshi']
+            , 'label' => ' '])
+            ->add('submit', SubmitType::class, ['label' => '发博文'])
             ->getForm();
         $form->handleRequest($request);
         if ($form->isValid()) {
