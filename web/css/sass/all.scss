@@ -1,0 +1,90 @@
+.all-title {
+    position: relative;
+    float: left;
+    width: 500px;
+    height: 40px;
+}
+
+.all-title i {
+    display: inline-block;
+    background-color: #000;
+    width: 34%;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    line-height: 42px;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.all-title .report {
+    display: inline-block;
+    float: right;
+    padding: 14px;
+    font-size: 1.2em;
+    border-radius: 4px;
+    background-color: #1D4A82;
+    color: #fff;
+    border: none;
+}
+
+.all-title i:after {
+    content: '';
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: 15px;
+    right: 306px;
+    border-left: 25px solid #000;
+    border-top: 25px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 0px solid transparent;
+}
+
+.all-info {
+    float: right;
+    width: 76%;
+    margin-top: 37px;
+}
+
+.all-info li {
+    border-bottom: 2px solid #7787D6;
+    padding-bottom: 5px;
+    font-size: 1.3em;
+    margin-bottom: 29px;
+    padding-left: 34px;
+    padding-right: 23px;
+}
+
+.all-info li.on{
+    background:#5eb5e0;
+}
+
+.all-info .all-info-title {
+    float: left;
+    color: #000;
+}
+
+.all-info-date {
+    float: right;
+    padding-right: 12px;
+}
+
+.all-info-delete {
+    color: #000;
+    float: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,77 @@
+/* line 1, ../sass/blogPublic.scss */
+body {
+  background-color: #C7C3C3;
+}
+
+/* line 4, ../sass/blogPublic.scss */
+.blog-header {
+  width: 80%;
+  float: right;
+  height: 23%;
+}
+
+/* line 10, ../sass/blogPublic.scss */
+.blog-header p {
+  font-size: 1.3em;
+  margin-left: 51px;
+  color: #fff;
+}
+
+/* line 15, ../sass/blogPublic.scss */
+.blog-header h3 {
+  display: inline-block;
+  margin: 6% auto 22px 7%;
+  font-size: 2.5em;
+  color: #fff;
+}
+
+/* line 22, ../sass/blogPublic.scss */
+.blog-additional {
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  float: left;
+  background-color: #1D4A82;
+}
+
+/* line 29, ../sass/blogPublic.scss */
+.motto {
+  font-size: .6em;
+}
+
+/* line 33, ../sass/blogPublic.scss */
+.blog-additional-userinfo {
+  width: 100%;
+  margin-top: 10%;
+  font-size: 1.8em;
+}
+
+/* line 40, ../sass/blogPublic.scss */
+.blog-additional-userinfo p {
+  display: inline-block;
+  color: #fff;
+  padding-top: 11px;
+  width: 60%;
+}
+
+/* line 47, ../sass/blogPublic.scss */
+.blog-additional-avatar img {
+  display: inline-block;
+  width: 120px;
+  margin-top: 10%;
+  height: 120px;
+  border-radius: 63px;
+  border: 4px solid #fff;
+}
+
+/* line 56, ../sass/blogPublic.scss */
+.nvg-ul li {
+  line-height: 64px;
+}
+
+/* line 60, ../sass/blogPublic.scss */
+.nvg-ul a {
+  color: #fff;
+  font-size: 1.4em;
+  text-decoration: none;
+}

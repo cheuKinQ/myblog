@@ -1,0 +1,38 @@
+.required {
+    font-size: 1.5em;
+}
+
+#form_title {
+    border: none;
+    border-bottom: 2px solid #1D4A82;
+    outline-style: none;
+    background-color: #C7C3C3;
+}
+
+#form_submit {
+    padding: 6px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    border: none;
+    background-color: #774402;
+    color: #fff;
+    margin: 10px 10px 10px 83px;
+}
+
+.ceshi {
+    width: 400px;
+    height:350px;
+    background-color: #C7C3C3;
+}
+
+
+#form {
+    text-align: center;
+}
+
+#form div {
+    margin-bottom: 20px;
+}
+
+#form div:first-child {
+}

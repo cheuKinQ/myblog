@@ -1,0 +1,43 @@
+<html>
+<head>
+    <meta http-equiv="content-type" Content="text/html" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/stylesheets/blogPublic.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/stylesheets/all.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/stylesheets/report.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/stylesheets/reset.css') }}">
+    <style type="text/css">
+    </style>
+</head>
+<body>
+<div class="blog">
+    <div class="blog-header" style="background-image: url(http://pic2.ooopic.com/12/32/32/09bOOOPICe9_1024.jpg)">
+        <h3>兴趣部落</h3>
+        <p>轻轻地来、轻轻地走.  --语自: 鲁迅</p>
+    </div>
+    <div class="blog-additional">
+        <div class="blog-additional-avatar"><img src="{{ asset('images/child.jpg') }}"></div>
+        <div class="blog-additional-userinfo">
+            <p><a style="color: #fff" href="javascript:0">博主名</a></p>
+            <P class="motto">人之初,性本善,性相近,习相远</P>
+        </div>
+        <div class="blog-additional-nvg" style="margin-top: 60px">
+            <ul class="nvg-ul">
+                <li><a href="javascript:0">主页</a></li>
+                <li><a href="{{ path('app_blog_all') }}">博文目录</a></li>
+                <li><a href="javascript:0">多媒体</a></li>
+                <li><a href="javascript:0">相册</a></li>
+                <li><a href="javascript:0">留言板</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 以上为公共模板（上部分） -
+    <!-- 填充模板 - 开始 -->
+    {% block content %}{% endblock content %}
+    <!-- 填充模板 - 结束 -->
+    <!-- 以上为公共模板 (下部分) -->
+</div>
+    {% block script %}{% endblock script %}
+</body>
+</html>
