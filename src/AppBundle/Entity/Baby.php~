@@ -1,0 +1,243 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Baby
+ *
+ * @ORM\Table(name="baby")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\BabyRepository")
+ */
+class Baby
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="babyname", type="string", length=255)
+     */
+    private $babyname;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tele", type="string",length=30)
+     */
+    private $tele;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="info", type="string", length=255)
+     */
+    private $info;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="num", type="integer")
+     */
+    private $num = 0;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="vote", type="integer")
+     */
+    private $vote = 0;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="img", type="string",length=255, nullable=true)
+     */
+    private $img;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="openId", type="string",length=255, unique=true)
+     */
+    private $openId;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="time", type="datetime",length=255,nullable=true)
+     */
+    private $time;
+
+
+    /**
+     * @return string
+     */
+    public function getOpenId()
+    {
+        return $this->openId;
+    }
+
+    /**
+     * @param string $openId
+     */
+    public function setOpenId($openId)
+    {
+        $this->openId = $openId;
+    }
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set babyname
+     *
+     * @param string $babyname
+     *
+     * @return Baby
+     */
+    public function setBabyname($babyname)
+    {
+        $this->babyname = $babyname;
+
+        return $this;
+    }
+
+    /**
+     * Get babyname
+     *
+     * @return string
+     */
+    public function getBabyname()
+    {
+        return $this->babyname;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTele()
+    {
+        return $this->tele;
+    }
+
+    /**
+     * @param string $tele
+     */
+    public function setTele($tele)
+    {
+        $this->tele = $tele;
+    }
+
+
+    /**
+     * Set info
+     *
+     * @param string $info
+     *
+     * @return Baby
+     */
+    public function setInfo($info)
+    {
+        $this->info = $info;
+
+        return $this;
+    }
+
+    /**
+     * Get info
+     *
+     * @return string
+     */
+    public function getInfo()
+    {
+        return $this->info;
+    }
+
+    /**
+     * Set num
+     *
+     * @param string $num
+     *
+     * @return Baby
+     */
+    public function setNum($num)
+    {
+        $this->num = $num;
+
+        return $this;
+    }
+
+    /**
+     * Get num
+     *
+     * @return string
+     */
+    public function getNum()
+    {
+        return $this->num;
+    }
+
+    /**
+     * Set vote
+     *
+     * @param integer $vote
+     *
+     * @return Baby
+     */
+    public function setVote($vote)
+    {
+        $this->vote = $vote;
+
+        return $this;
+    }
+
+    /**
+     * Get vote
+     *
+     * @return int
+     */
+    public function getVote()
+    {
+        return $this->vote;
+    }
+
+    /**
+     * Set img
+     *
+     * @param string $img
+     *
+     * @return Baby
+     */
+    public function setImg($img)
+    {
+        $this->img = $img;
+
+        return $this;
+    }
+
+    /**
+     * Get img
+     *
+     * @return string
+     */
+    public function getImg()
+    {
+        return $this->img;
+    }
+}
