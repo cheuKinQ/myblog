@@ -3,16 +3,15 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Blog;
+use AppBundle\Form\BlogType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 /**
  * Class BlogController
  * @package AppBundle\Controller
-// * @Route("/blog")
+ * // * @Route("/blog")
  */
 class BlogController extends Controller
 {
@@ -32,7 +31,7 @@ class BlogController extends Controller
         $em = $this->getDoctrine()->getManager();
         $all = $em->getRepository('AppBundle:Blog')->findAll();
         return $this->render('AppBundle:Blog:all.html.twig'
-            ,array('all' => $all)
+            , array('all' => $all)
         );
     }
 
@@ -43,13 +42,9 @@ class BlogController extends Controller
     {
         $blog = new Blog();
 
-        $form = $this->createFormBuilder($blog)
-            ->add('title',TextType::class, ['label' => '标题: '])
-            ->add('content',TextType::class,['attr' => ['class' => 'ceshi']
-            , 'label' => ' '])
-            ->add('submit', SubmitType::class, ['label' => '发博文'])
-            ->getForm();
+        $form = $this->createForm(BlogType::class, $blog);
         $form->handleRequest($request);
+
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $blog->setUsername("测试");
