@@ -2,6 +2,22 @@
     font-size: 1.5em;
 }
 
+[placeholder] { font-family: 'Microsoft yahei'; }
+::-moz-placeholder {
+    color: rgba(83, 83, 83, 0.83);
+    text-indent: 5px; /* 没有用 */
+    opacity: 1!important;
+}
+:-ms-input-placeholder {
+    color: rgba(83, 83, 83, 0.83);
+    text-indent: 5px;
+}
+::-webkit-input-placeholder {
+    color: rgba(83, 83, 83, 0.83);
+    text-indent: 2em;
+}
+
+
 #form_title {
     border: none;
     border-bottom: 2px solid #1D4A82;
@@ -18,13 +34,47 @@
     color: #fff;
     margin: 10px 10px 10px 83px;
 }
-
-.ceshi {
-    width: 400px;
-    height:350px;
-    background-color: #C7C3C3;
+.blog-title input{
+    text-indent: 1em;
+    width: 200px;
+    height: 26px;
+    background-color: #c7c3c3;
+    border: none;
+    border-bottom: 2px solid #000;
+    font-size: 1.4em;
+    outline: none;
+}
+.row textarea{
+    text-indent: 2em;
+    width: 500px;
+    height: 250px;
+    font-size: 1.4em;
+    padding: 10px;
+    font-weight: 900;
+    outline-style: none;
+    outline: 1px solid blue;
 }
 
+.btn button{
+    width: 90px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: #1d4a82;
+    color: #fff;
+    font-size: 1.5em;
+}
+
+.blog-form {
+    text-align: center;
+    float: right;
+    width: 80%;
+    height: 50%;
+    margin-top: 50px;
+}
+
+.blog-form div{
+    margin-bottom: 12px;
+}
 
 #form {
     text-align: center;

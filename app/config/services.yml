@@ -8,6 +8,7 @@ services:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
 
+#为FOSUserBundle添加了兼容代码
 services:
     fos_user.doctrine_registry:
         alias: doctrine

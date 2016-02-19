@@ -1,1 +1,107 @@
-.required{font-size:1.5em}#form_title{border:none;border-bottom:2px solid #1D4A82;outline-style:none;background-color:#C7C3C3}#form_submit{padding:6px;font-size:1.1em;border-radius:5px;border:none;background-color:#774402;color:#fff;margin:10px 10px 10px 83px}.ceshi{width:400px;height:350px;background-color:#C7C3C3}#form{text-align:center}#form div{margin-bottom:20px}
+@charset "UTF-8";
+/* line 1, ../sass/report.scss */
+.required {
+  font-size: 1.5em;
+}
+
+/* line 5, ../sass/report.scss */
+[placeholder] {
+  font-family: 'Microsoft yahei';
+}
+
+/* line 6, ../sass/report.scss */
+::-moz-placeholder {
+  color: rgba(83, 83, 83, 0.83);
+  text-indent: 5px;
+  /* 没有用 */
+  opacity: 1 !important;
+}
+
+/* line 11, ../sass/report.scss */
+:-ms-input-placeholder {
+  color: rgba(83, 83, 83, 0.83);
+  text-indent: 5px;
+}
+
+/* line 15, ../sass/report.scss */
+::-webkit-input-placeholder {
+  color: rgba(83, 83, 83, 0.83);
+  text-indent: 2em;
+}
+
+/* line 21, ../sass/report.scss */
+#form_title {
+  border: none;
+  border-bottom: 2px solid #1D4A82;
+  outline-style: none;
+  background-color: #C7C3C3;
+}
+
+/* line 28, ../sass/report.scss */
+#form_submit {
+  padding: 6px;
+  font-size: 1.1em;
+  border-radius: 5px;
+  border: none;
+  background-color: #774402;
+  color: #fff;
+  margin: 10px 10px 10px 83px;
+}
+
+/* line 37, ../sass/report.scss */
+.blog-title input {
+  text-indent: 1em;
+  width: 200px;
+  height: 26px;
+  background-color: #c7c3c3;
+  border: none;
+  border-bottom: 2px solid #000;
+  font-size: 1.4em;
+  outline: none;
+}
+
+/* line 47, ../sass/report.scss */
+.row textarea {
+  text-indent: 2em;
+  width: 500px;
+  height: 250px;
+  font-size: 1.4em;
+  padding: 10px;
+  font-weight: 900;
+  outline-style: none;
+  outline: 1px solid blue;
+}
+
+/* line 58, ../sass/report.scss */
+.btn button {
+  width: 90px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #1d4a82;
+  color: #fff;
+  font-size: 1.5em;
+}
+
+/* line 67, ../sass/report.scss */
+.blog-form {
+  text-align: center;
+  float: right;
+  width: 80%;
+  height: 50%;
+  margin-top: 50px;
+}
+
+/* line 75, ../sass/report.scss */
+.blog-form div {
+  margin-bottom: 12px;
+}
+
+/* line 79, ../sass/report.scss */
+#form {
+  text-align: center;
+}
+
+/* line 83, ../sass/report.scss */
+#form div {
+  margin-bottom: 20px;
+}

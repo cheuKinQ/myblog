@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Blog;
+use AppBundle\Entity\BlogUser;
 use AppBundle\Form\BlogType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -11,7 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Class BlogController
  * @package AppBundle\Controller
- * // * @Route("/blog")
+ * @Route("/blog")
  */
 class BlogController extends Controller
 {
@@ -24,7 +25,7 @@ class BlogController extends Controller
     }
 
     /**
-     * @Route("/all",name="app_blog_all")
+     * @Route("/all", name="app_blog_all")
      */
     public function allAction()
     {
@@ -41,17 +42,17 @@ class BlogController extends Controller
     public function reportAction(Request $request)
     {
         $blog = new Blog();
-
+        //生成 发表博文表单
         $form = $this->createForm(BlogType::class, $blog);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $blog->setUsername("测试");
-            $em->persist($blog);
+            $username = $blog->setUsername("测试");
+            $em->persist($username);
             $em->flush();
             return $this->redirectToRoute("app_blog_all");
         }
-        return $this->render('AppBundle:Blog:report.html.twig', array('formm' => $form->createView()));
+        return $this->render('AppBundle:Blog:report.html.twig', array('form' => $form->createView()));
     }
 }

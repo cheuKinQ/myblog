@@ -26,21 +26,22 @@ class Blog
 
     /**
      * @var string
-     *
      * @ORM\Column(name="username", type="string", length=255)
      */
     private $username;
 
     /**
      * @var string
-     * @Assert\Length(max=4)
+     * @Assert\Length(max=5, maxMessage="超过合法长度!!")
+     * @Assert\NotBlank(message="请输入博客标题")
      * @ORM\Column(name="title", type="string", length=255)
      */
     private $title;
 
     /**
      * @var string
-     * @Assert\Length(min=5)
+     * @Assert\NotBlank(message="请输入内容!!")
+     * @Assert\Length(min=5,minMessage="内容最小长度为5位中文或英文字母")
      * @ORM\Column(name="content", type="string", length=255)
      */
     private $content;
