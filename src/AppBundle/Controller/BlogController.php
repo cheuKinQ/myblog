@@ -3,7 +3,6 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Blog;
-use AppBundle\Entity\BlogUser;
 use AppBundle\Form\BlogType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -48,7 +47,7 @@ class BlogController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $username = $blog->setUsername("测试");
+            $username = $blog->setUsername($name = $this->getUser()->getUsername());
             $em->persist($username);
             $em->flush();
             return $this->redirectToRoute("app_blog_all");

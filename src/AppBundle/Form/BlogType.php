@@ -7,8 +7,6 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\Blank;
-use Symfony\Component\Validator\Constraints\NotBlank;
 
 class BlogType extends AbstractType
 {
@@ -27,8 +25,8 @@ class BlogType extends AbstractType
         ]);
     }
 
-    public function getName()
+    public function getBlockPrefix()
     {
-        return 'app_bundle_blog_type';
+        return 'app_blog_type';
     }
 }
