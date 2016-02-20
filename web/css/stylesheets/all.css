@@ -1,1 +1,100 @@
-.all-title{position:relative;float:left;width:500px;height:40px}.all-title i{display:inline-block;background-color:#000;width:34%;height:100%;color:#fff;text-align:center;line-height:42px;font-size:20px;letter-spacing:2px}.all-title .report{display:inline-block;float:right;padding:14px;font-size:1.2em;border-radius:4px;background-color:#1D4A82;color:#fff;border:none}.all-title i:after{content:'';width:0px;height:0px;position:absolute;top:15px;right:306px;border-left:25px solid #000;border-top:25px solid transparent;border-right:0px solid transparent;border-bottom:0px solid transparent}.all-info{float:right;width:76%;margin-top:37px}.all-info li{border-bottom:2px solid #7787D6;padding-bottom:5px;font-size:1.3em;margin-bottom:29px;padding-left:34px;padding-right:23px}.all-info li.on{background:#5eb5e0}.all-info .all-info-title{float:left;color:#000}.all-info-date{float:right;padding-right:12px}.all-info-delete{color:#000;float:right}
+/* line 1, ../sass/all.scss */
+.all-title {
+  position: relative;
+  float: left;
+  width: 500px;
+  height: 40px;
+}
+
+/* line 8, ../sass/all.scss */
+.all-title i {
+  display: inline-block;
+  background-color: #000;
+  width: 34%;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+  line-height: 42px;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+/* line 20, ../sass/all.scss */
+.all-title .report {
+  display: inline-block;
+  float: right;
+  padding: 14px;
+  font-size: 1.2em;
+  border-radius: 4px;
+  background-color: #1D4A82;
+  color: #fff;
+  border: none;
+}
+
+/* line 31, ../sass/all.scss */
+.all-title i:after {
+  content: '';
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top: 15px;
+  right: 306px;
+  border-left: 25px solid #000;
+  border-top: 25px solid transparent;
+  border-right: 0px solid transparent;
+  border-bottom: 0px solid transparent;
+}
+
+/* line 44, ../sass/all.scss */
+.all-info {
+  float: right;
+  width: 76%;
+  margin-top: 37px;
+}
+
+/* line 50, ../sass/all.scss */
+.all-info li {
+  border-bottom: 2px solid #7787D6;
+  padding-bottom: 5px;
+  font-size: 1.3em;
+  margin-bottom: 29px;
+  padding-right: 23px;
+}
+
+/* line 58, ../sass/all.scss */
+.all-info li.on {
+  background: #5eb5e0;
+}
+
+/* line 62, ../sass/all.scss */
+.all-info .all-info-title {
+  color: #000;
+}
+
+/* line 66, ../sass/all.scss */
+.all-info-date {
+  float: right;
+  padding-right: 12px;
+}
+
+/* line 71, ../sass/all.scss */
+.all-info-delete {
+  color: #000;
+  float: right;
+}
+
+/* line 76, ../sass/all.scss */
+.page {
+  margin-left: 50%;
+  position: absolute;
+  margin-top: 581px;
+}
+/* line 80, ../sass/all.scss */
+.page a {
+  background-color: #553b2c;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 1.1em;
+}

@@ -2,19 +2,23 @@
 
 {% block content %}
     <div class="all-title">
-        <i>全部博文(2)</i>
+        <i>全部博文()</i>
         <a href="{{ path('app_blog_report') }}" class="report">发表博文</a>
     </div>
     <div id="all-info" class="all-info">
         <ol>
-            {% for all in all %}
-            <li>
-                <a class="all-info-title">{{all.title}}</a>
-                <a class="all-info-delete" href="">[删除]</a>
-                <p class="all-info-date">{{ all.duedate|date("Y-m-d H:i:s A") }}</p>
-            </li>
-            {% endfor%}
+            {% for all in queryPageResult %}
+                <li>
+                    <a class="all-info-title">{{ all.title }}</a>
+                    <a class="all-info-delete" href="">[删除]</a>
+                    <p class="all-info-date">{{ all.duedate|date("Y-m-d H:i:s A") }}</p>
+                </li>
+            {% endfor %}
         </ol>
+    </div>
+    <div class="page">
+        <a href="{{ path('app_blog_all',{'page': page-1}) }}">上一页</a>
+        <a href="{{ path('app_blog_all',{'page': page+1}) }}">下一页</a>
     </div>
 {% endblock %}
 {% block script %}

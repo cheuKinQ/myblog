@@ -52,7 +52,6 @@
     padding-bottom: 5px;
     font-size: 1.3em;
     margin-bottom: 29px;
-    padding-left: 34px;
     padding-right: 23px;
 }
 
@@ -61,7 +60,6 @@
 }
 
 .all-info .all-info-title {
-    float: left;
     color: #000;
 }
 
@@ -73,6 +71,20 @@
 .all-info-delete {
     color: #000;
     float: right;
+}
+
+.page{
+    margin-left: 50%;
+    position: absolute;
+    margin-top: 581px;
+    a {
+        background-color: #553b2c;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 3px;
+        text-decoration: none;
+        font-size: 1.1em;
+    }
 }
 
 

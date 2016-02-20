@@ -7,6 +7,7 @@ use AppBundle\Form\BlogType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class BlogController
@@ -24,14 +25,29 @@ class BlogController extends Controller
     }
 
     /**
-     * @Route("/all", name="app_blog_all")
+     * @Route("/all/{page}", name="app_blog_all")
      */
-    public function allAction()
+    public function allAction($page)
     {
         $em = $this->getDoctrine()->getManager();
-        $all = $em->getRepository('AppBundle:Blog')->findAll();
+        $newPage = ($page * 6) - 6;
+        $qb = $em->getRepository('AppBundle:Blog')->createQueryBuilder('Blog');
+        $qb->orderBy('Blog.duedate', 'desc')
+            ->setMaxResults(6)
+            ->setFirstResult($newPage);
+        $queryPageResult = $qb->getQuery()->getResult();
+        if (!$queryPageResult) {
+            $qb = $em->getRepository('AppBundle:Blog')->createQueryBuilder('Blog');
+            $qb->orderBy('Blog.duedate', 'desc')
+                ->setMaxResults(6)
+                ->setFirstResult(($page - 1) * 6 - 6);
+            $queryPageResult = $qb->getQuery()->getResult();
+            return $this->render('AppBundle:Blog:all.html.twig'
+                , ['queryPageResult' => $queryPageResult, 'page' => $page-1]
+            );
+        }
         return $this->render('AppBundle:Blog:all.html.twig'
-            , array('all' => $all)
+            , ['queryPageResult' => $queryPageResult, 'page' => $page]
         );
     }
 
