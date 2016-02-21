@@ -2,23 +2,32 @@
 
 {% block content %}
     <div class="all-title">
-        <i>全部博文()</i>
+        <i>全部博文({{ pagination.getTotalItemCount }})</i>
         <a href="{{ path('app_blog_report') }}" class="report">发表博文</a>
     </div>
+    <table class="list-control">
+        <tr>
+            {# sorting of properties based on query components #}
+            <th>{{ knp_pagination_sortable(pagination, '按id排序', 'a.id') }}</th>
+            <th>{{ knp_pagination_sortable(pagination, '按时间排序', ['a.duedate']) }}</th>
+        </tr>
+    </table>
     <div id="all-info" class="all-info">
         <ol>
-            {% for all in queryPageResult %}
+            <a href="">
+            {% for all in pagination %}
+                {#<li {% if loop.index is odd %}class="color"{% endif %}>#}
                 <li>
                     <a class="all-info-title">{{ all.title }}</a>
                     <a class="all-info-delete" href="">[删除]</a>
                     <p class="all-info-date">{{ all.duedate|date("Y-m-d H:i:s A") }}</p>
                 </li>
             {% endfor %}
+            </a>
         </ol>
     </div>
-    <div class="page">
-        <a href="{{ path('app_blog_all',{'page': page-1}) }}">上一页</a>
-        <a href="{{ path('app_blog_all',{'page': page+1}) }}">下一页</a>
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
     </div>
 {% endblock %}
 {% block script %}

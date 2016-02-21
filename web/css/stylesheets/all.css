@@ -7,6 +7,12 @@
 }
 
 /* line 8, ../sass/all.scss */
+.list-control {
+  width: 260px;
+  height: 60px;
+}
+
+/* line 13, ../sass/all.scss */
 .all-title i {
   display: inline-block;
   background-color: #000;
@@ -19,7 +25,7 @@
   letter-spacing: 2px;
 }
 
-/* line 20, ../sass/all.scss */
+/* line 25, ../sass/all.scss */
 .all-title .report {
   display: inline-block;
   float: right;
@@ -31,7 +37,7 @@
   border: none;
 }
 
-/* line 31, ../sass/all.scss */
+/* line 36, ../sass/all.scss */
 .all-title i:after {
   content: '';
   width: 0px;
@@ -45,14 +51,18 @@
   border-bottom: 0px solid transparent;
 }
 
-/* line 44, ../sass/all.scss */
+/* line 49, ../sass/all.scss */
 .all-info {
   float: right;
   width: 76%;
-  margin-top: 37px;
 }
 
-/* line 50, ../sass/all.scss */
+/* line 54, ../sass/all.scss */
+.color {
+  color: yellow;
+}
+
+/* line 58, ../sass/all.scss */
 .all-info li {
   border-bottom: 2px solid #7787D6;
   padding-bottom: 5px;
@@ -61,40 +71,45 @@
   padding-right: 23px;
 }
 
-/* line 58, ../sass/all.scss */
+/* line 66, ../sass/all.scss */
 .all-info li.on {
   background: #5eb5e0;
 }
 
-/* line 62, ../sass/all.scss */
+/* line 70, ../sass/all.scss */
 .all-info .all-info-title {
   color: #000;
 }
 
-/* line 66, ../sass/all.scss */
+/* line 74, ../sass/all.scss */
 .all-info-date {
   float: right;
   padding-right: 12px;
 }
 
-/* line 71, ../sass/all.scss */
+/* line 79, ../sass/all.scss */
 .all-info-delete {
   color: #000;
   float: right;
 }
 
-/* line 76, ../sass/all.scss */
-.page {
-  margin-left: 50%;
-  position: absolute;
-  margin-top: 581px;
+/* line 84, ../sass/all.scss */
+.navigation {
+  margin-top: 330px;
+  text-align: center;
+  margin-right: 170px;
 }
-/* line 80, ../sass/all.scss */
-.page a {
+/* line 88, ../sass/all.scss */
+.navigation span {
   background-color: #553b2c;
-  color: #fff;
+  color: #99cdd8;
   padding: 5px 10px;
   border-radius: 3px;
   text-decoration: none;
   font-size: 1.1em;
+  margin-right: 5px;
+}
+/* line 97, ../sass/all.scss */
+.navigation a {
+  color: #fff;
 }

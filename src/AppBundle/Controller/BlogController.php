@@ -7,7 +7,6 @@ use AppBundle\Form\BlogType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class BlogController
@@ -25,30 +24,36 @@ class BlogController extends Controller
     }
 
     /**
-     * @Route("/all/{page}", name="app_blog_all")
+     * @Route("/all", name="app_blog_all")
      */
-    public function allAction($page)
+    public function allAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
-        $newPage = ($page * 6) - 6;
-        $qb = $em->getRepository('AppBundle:Blog')->createQueryBuilder('Blog');
-        $qb->orderBy('Blog.duedate', 'desc')
-            ->setMaxResults(6)
-            ->setFirstResult($newPage);
-        $queryPageResult = $qb->getQuery()->getResult();
-        if (!$queryPageResult) {
-            $qb = $em->getRepository('AppBundle:Blog')->createQueryBuilder('Blog');
-            $qb->orderBy('Blog.duedate', 'desc')
-                ->setMaxResults(6)
-                ->setFirstResult(($page - 1) * 6 - 6);
-            $queryPageResult = $qb->getQuery()->getResult();
-            return $this->render('AppBundle:Blog:all.html.twig'
-                , ['queryPageResult' => $queryPageResult, 'page' => $page-1]
-            );
-        }
-        return $this->render('AppBundle:Blog:all.html.twig'
-            , ['queryPageResult' => $queryPageResult, 'page' => $page]
+        $em = $this->get('doctrine.orm.entity_manager');
+
+        $dql = 'SELECT a FROM AppBundle:Blog a';
+        $query = $em->createQuery($dql);
+        $paginator = $this->get('knp_paginator');
+//        if (!$queryPageResult) {
+//            $qb = $em->getRepository('AppBundle:Blog')->createQueryBuilder('Blog');
+//            $qb->orderBy('Blog.duedate', 'desc')
+//                ->setMaxResults(6)
+//                ->setFirstResult(($page - 1) * 6 - 6);
+//            $queryPageResult = $qb->getQuery()->getResult();
+//            return $this->render('AppBundle:Blog:all.html.twig'
+//                , ['queryPageResult' => $queryPageResult, 'page' => $page-1]
+//            );
+//        }
+        $pagination = $paginator->paginate(
+            $query, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            2/*limit per page*/
         );
+
+        // parameters to template
+        return $this->render('AppBundle:Blog:all.html.twig', array('pagination' => $pagination));
+//        return $this->render('AppBundle:Blog:all.html.twig'
+//            , ['queryPageResult' => $queryPageResult, 'page' => $page]
+//        );
     }
 
     /**
