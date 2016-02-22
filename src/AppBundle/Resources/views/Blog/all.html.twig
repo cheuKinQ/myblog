@@ -5,49 +5,78 @@
         <i>全部博文({{ pagination.getTotalItemCount }})</i>
         <a href="{{ path('app_blog_report') }}" class="report">发表博文</a>
     </div>
-    <table class="list-control">
-        <tr>
-            {# sorting of properties based on query components #}
-            <th>{{ knp_pagination_sortable(pagination, '按id排序', 'a.id') }}</th>
-            <th>{{ knp_pagination_sortable(pagination, '按时间排序', ['a.duedate']) }}</th>
-        </tr>
-    </table>
-    <div id="all-info" class="all-info">
-        <ol>
-            <a href="">
-            {% for all in pagination %}
-                {#<li {% if loop.index is odd %}class="color"{% endif %}>#}
-                <li>
-                    <a class="all-info-title">{{ all.title }}</a>
-                    <a class="all-info-delete" href="">[删除]</a>
-                    <p class="all-info-date">{{ all.duedate|date("Y-m-d H:i:s A") }}</p>
-                </li>
-            {% endfor %}
-            </a>
-        </ol>
+    <div class="table">
+        <div class="table-cloumn-group">
+            <div class="table-column"></div>
+            <div class="table-column"></div>
+            <div class="table-column"></div>
+        </div>
+        <div class="table-header-group">
+            <ul class="table-row">
+                <li class="table-cell">{{ knp_pagination_sortable(pagination, '标题', ['a.title']) }}</li>
+                <li class="table-cell">作者</li>
+                <li class="table-cell">{{ knp_pagination_sortable(pagination, '发布日期', ['a.duedate']) }}</li>
+                <li class="table-cell">操作</li>
+            </ul>
+        </div>
+        <div class="table-footer-group">
+            <ul class="table-row">
+                <li class="table-cell">{{ knp_pagination_sortable(pagination, '标题', ['a.title']) }}</li>
+                <li class="table-cell">作者</li>
+                <li class="table-cell">{{ knp_pagination_sortable(pagination, '发布日期', ['a.duedate']) }}</li>
+                <li class="table-cell">操作</li>
+            </ul>
+        </div>
+        {% for article in pagination %}
+            <div class="table-row-group">
+                <ul class="table-row">
+                    <a href="{{ path('app_blog_oneArticle',{'id': article.id}) }}"><li class="table-cell">{{ article.title }}</li></a>
+                    <li class="table-cell">{{ app.user.username }}</li>
+                    <li class="table-cell">{{ article.duedate|date("Y-m-d H:i:s A") }}</li>
+                    <li>
+                        <a href="">编辑</a>
+                        <a href="">删除</a>
+                    </li>
+                </ul>
+            </div>
+        {% endfor %}
     </div>
+    {#<div id="all-info" class="all-info">#}
+        {#<ol>#}
+            {#{% for all in pagination %}#}
+                {#&#123;&#35;<li {% if loop.index is odd %}class="color"{% endif %}>&#35;&#125;#}
+
+                {#<li>#}
+                    {#<a class="all-info-title" href="all-">{{ all.title }}</a>#}
+                    {#<a class="all-info-delete" href="">[删除]</a>#}
+                    {#<p class="all-info-date">{{ all.duedate|date("Y-m-d H:i:s A") }}</p>#}
+                {#</li>#}
+            {#{% endfor %}#}
+        {#</ol>#}
+    {#</div>#}
     <div class="navigation">
         {{ knp_pagination_render(pagination) }}
     </div>
+
 {% endblock %}
 {% block script %}
-    <script type="text/javascript">
-        var ul = document.getElementById("all-info");
-        var li = ul.getElementsByTagName("li");
-        for (var i = 0; i < li.length; i++) {
-            li[i].onmouseover = function () {
-                for (var j = 0; j < li.length; j++) {
-                    li[j].className = "";
-                }
-                this.className = "on"
-            }
-            li[i].onmouseout = function () {
-                for (var j = 0; j < li.length; j++) {
-                    li[j].className = "";
-                }
-                this.className = ""
-            }
-        }
-    </script>
+    {#<script type="text/javascript">#}
+        {#var ul = document.getElementById("all-info");#}
+        {#var li = ul.getElementsByTagName("li");#}
+        {#for (var i = 0; i < li.length; i++) {#}
+            {#li[i].onmouseover = function () {#}
+                {#for (var j = 0; j < li.length; j++) {#}
+                    {#li[j].className = "";#}
+                {#}#}
+                {#this.className = "on"#}
+            {#}#}
+            {#li[i].onmouseout = function () {#}
+                {#for (var j = 0; j < li.length; j++) {#}
+                    {#li[j].className = "";#}
+                {#}#}
+                {#this.className = ""#}
+            {#}#}
+        {#}#}
+    {#</script>#}
 {% endblock script %}
 

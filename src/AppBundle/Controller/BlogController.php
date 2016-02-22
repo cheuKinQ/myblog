@@ -6,6 +6,8 @@ use AppBundle\Entity\Blog;
 use AppBundle\Form\BlogType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\BrowserKit\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -74,5 +76,18 @@ class BlogController extends Controller
             return $this->redirectToRoute("app_blog_all");
         }
         return $this->render('AppBundle:Blog:report.html.twig', array('form' => $form->createView()));
+    }
+
+    /**
+     * @Route("/oneArticle/{id}",name="app_blog_oneArticle")
+     */
+    public function oneArticleAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $article = $em->getRepository('AppBundle:Blog')->findOneBy(['id' => $id]);
+        if(!$article) {
+            return $this->redirectToRoute('app_blog_all');
+        }
+        return $this->render('AppBundle:Blog:oneArticle.html.twig',['article'=> $article]);
     }
 }

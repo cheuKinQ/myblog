@@ -4,15 +4,10 @@
   float: left;
   width: 500px;
   height: 40px;
+  margin-bottom: 15px;
 }
 
-/* line 8, ../sass/all.scss */
-.list-control {
-  width: 260px;
-  height: 60px;
-}
-
-/* line 13, ../sass/all.scss */
+/* line 9, ../sass/all.scss */
 .all-title i {
   display: inline-block;
   background-color: #000;
@@ -25,11 +20,13 @@
   letter-spacing: 2px;
 }
 
-/* line 25, ../sass/all.scss */
+/* line 21, ../sass/all.scss */
 .all-title .report {
   display: inline-block;
   float: right;
-  padding: 14px;
+  margin-right: 223px;
+  margin-top: 10px;
+  padding: 9px;
   font-size: 1.2em;
   border-radius: 4px;
   background-color: #1D4A82;
@@ -37,7 +34,7 @@
   border: none;
 }
 
-/* line 36, ../sass/all.scss */
+/* line 34, ../sass/all.scss */
 .all-title i:after {
   content: '';
   width: 0px;
@@ -51,18 +48,7 @@
   border-bottom: 0px solid transparent;
 }
 
-/* line 49, ../sass/all.scss */
-.all-info {
-  float: right;
-  width: 76%;
-}
-
-/* line 54, ../sass/all.scss */
-.color {
-  color: yellow;
-}
-
-/* line 58, ../sass/all.scss */
+/* line 47, ../sass/all.scss */
 .all-info li {
   border-bottom: 2px solid #7787D6;
   padding-bottom: 5px;
@@ -71,35 +57,13 @@
   padding-right: 23px;
 }
 
-/* line 66, ../sass/all.scss */
-.all-info li.on {
-  background: #5eb5e0;
-}
-
-/* line 70, ../sass/all.scss */
-.all-info .all-info-title {
-  color: #000;
-}
-
-/* line 74, ../sass/all.scss */
-.all-info-date {
-  float: right;
-  padding-right: 12px;
-}
-
-/* line 79, ../sass/all.scss */
-.all-info-delete {
-  color: #000;
-  float: right;
-}
-
-/* line 84, ../sass/all.scss */
+/* line 55, ../sass/all.scss */
 .navigation {
-  margin-top: 330px;
+  margin-top: 40px;
   text-align: center;
   margin-right: 170px;
 }
-/* line 88, ../sass/all.scss */
+/* line 59, ../sass/all.scss */
 .navigation span {
   background-color: #553b2c;
   color: #99cdd8;
@@ -109,7 +73,81 @@
   font-size: 1.1em;
   margin-right: 5px;
 }
-/* line 97, ../sass/all.scss */
+/* line 68, ../sass/all.scss */
 .navigation a {
   color: #fff;
+}
+
+/* line 74, ../sass/all.scss */
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 75, ../sass/all.scss */
+.table {
+  margin-left: 22%;
+  display: table;
+  width: 76%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border: 1px solid #AFABAB;
+  font: 14px/3 georgia,simsun,arial;
+}
+
+/* line 81, ../sass/all.scss */
+.table-caption {
+  display: table-caption;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+/* line 82, ../sass/all.scss */
+.table-column-group {
+  display: table-column-group;
+}
+
+/* line 83, ../sass/all.scss */
+.table-column {
+  display: table-column;
+  width: 100px;
+}
+
+/* line 84, ../sass/all.scss */
+.table-row-group {
+  display: table-row-group;
+}
+
+/* line 85, ../sass/all.scss */
+.table-row {
+  display: table-row;
+}
+
+/* line 86, ../sass/all.scss */
+.table-row-group .table-row:hover {
+  background: #f6f6f6;
+}
+
+/* line 87, ../sass/all.scss */
+.table-cell {
+  display: table-cell;
+  padding: 0 5px;
+}
+
+/* line 88, ../sass/all.scss */
+.table-header-group {
+  display: table-header-group;
+  background: #F1F1F1;
+  font-weight: bold;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+/* line 92, ../sass/all.scss */
+.table-footer-group {
+  display: table-footer-group;
+  background-color: #F1F1F1;
+  font-weight: bold;
+  border-top: 1px solid #e1e1e1;
 }

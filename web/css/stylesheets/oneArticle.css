@@ -1,0 +1,44 @@
+/* line 1, ../sass/oneArticle.scss */
+.oneArticle {
+  width: 74%;
+  margin-top: 30px;
+  margin-left: 30px;
+  float: left;
+}
+
+/* line 8, ../sass/oneArticle.scss */
+.oneArticle h1 {
+  font-size: 2.5em;
+}
+
+/* line 12, ../sass/oneArticle.scss */
+.article-info {
+  width: 55%;
+  margin-top: 20px;
+  margin-left: 55px;
+  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  font-size: 1.2em;
+}
+/* line 18, ../sass/oneArticle.scss */
+.article-info span {
+  margin-right: 26px;
+}
+
+/* line 23, ../sass/oneArticle.scss */
+.article-content {
+  margin-top: 27px;
+  text-indent: 2em;
+}
+/* line 26, ../sass/oneArticle.scss */
+.article-content p {
+  font-size: 1.2em;
+  letter-spacing: 2px;
+  line-height: 19px;
+}
+
+/* line 34, ../sass/oneArticle.scss */
+.border {
+  width: 65%;
+  border: 2px solid;
+  margin-top: 16px;
+}

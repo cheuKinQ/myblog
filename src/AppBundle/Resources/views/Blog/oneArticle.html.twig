@@ -1,0 +1,20 @@
+{% extends 'AppBundle:Blog:public.html.twig' %}
+
+{% block content %}
+    <div class="oneArticle">
+        <h1>{{ article.title }}</h1>
+        <div class="article-info">
+            <span>作者: <a href="">{{ article.username }}</a></span>
+            <span>发布日期 : <a href="">{{ article.duedate|date ("Y-m-d H:i:s A"    ) }}</a></span>
+        </div>
+        <div class="border"></div>
+        <div class="article-content">
+            <p>{{ article.content }}</p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}
+
