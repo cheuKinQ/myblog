@@ -1,0 +1,25 @@
+{% extends 'AppBundle:Blog:public.html.twig' %}
+{% block content %}
+    {{ form_start(form, {'attr': {'class': 'blog-form','novalidate': 'novalidate'}}) }}
+    <div class="blog-title">
+        {{ form_label(form.title) }}
+        {{ form_widget(form.title,{'attr': {'placeholder': '请输入标题'}}) }}
+        <div class="errors">
+            {{ form_errors(form.title) }}
+        </div>
+    </div>
+    <div class="row">
+        {{ form_widget(form.content,{'attr': {'placeholder': '请输入内容'}}) }}
+        <div class="errors">
+            {{ form_errors(form.content) }}
+        </div>
+    </div>
+    <div class="blog-updatetime">
+        最后编辑于{{ article.duedate|date("y年m月d日 h:i:s")}}
+    </div>
+    <div class="btn">
+        {{ form_row(form.submit) }}
+    </div>
+
+    {{ form_end(form) }}
+{% endblock %}

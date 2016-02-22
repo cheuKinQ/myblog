@@ -34,8 +34,8 @@
                     <li class="table-cell">{{ app.user.username }}</li>
                     <li class="table-cell">{{ article.duedate|date("Y-m-d H:i:s A") }}</li>
                     <li>
-                        <a href="">编辑</a>
-                        <a href="">删除</a>
+                        <a href="{{ path('app_blog_edit',{'id': article.id}) }}">编辑</a>
+                        <a href="{{ path('app_blog_delete',{'id': article.id}) }}">删除</a>
                     </li>
                 </ul>
             </div>

@@ -85,7 +85,7 @@ ul {
   list-style: none;
 }
 
-/* line 75, ../sass/all.scss */
+/* line 80, ../sass/all.scss */
 .table {
   margin-left: 22%;
   display: table;
@@ -93,10 +93,10 @@ ul {
   border-collapse: collapse;
   background-color: #fff;
   border: 1px solid #AFABAB;
-  font: 14px/3 georgia,simsun,arial;
+  font: 14px/3 georgia, simsun, arial;
 }
 
-/* line 81, ../sass/all.scss */
+/* line 90, ../sass/all.scss */
 .table-caption {
   display: table-caption;
   margin: 0;
@@ -104,50 +104,58 @@ ul {
   font-size: 16px;
 }
 
-/* line 82, ../sass/all.scss */
+/* line 97, ../sass/all.scss */
 .table-column-group {
   display: table-column-group;
 }
 
-/* line 83, ../sass/all.scss */
+/* line 101, ../sass/all.scss */
 .table-column {
   display: table-column;
   width: 100px;
 }
 
-/* line 84, ../sass/all.scss */
+/* line 106, ../sass/all.scss */
 .table-row-group {
   display: table-row-group;
 }
 
-/* line 85, ../sass/all.scss */
+/* line 110, ../sass/all.scss */
 .table-row {
   display: table-row;
 }
 
-/* line 86, ../sass/all.scss */
+/* line 114, ../sass/all.scss */
 .table-row-group .table-row:hover {
   background: #f6f6f6;
 }
 
-/* line 87, ../sass/all.scss */
+/* line 118, ../sass/all.scss */
 .table-cell {
   display: table-cell;
   padding: 0 5px;
 }
 
-/* line 88, ../sass/all.scss */
+/* line 123, ../sass/all.scss */
 .table-header-group {
   display: table-header-group;
   background: #F1F1F1;
   font-weight: bold;
   border-bottom: 1px solid #e1e1e1;
 }
+/* line 128, ../sass/all.scss */
+.table-header-group li {
+  font-size: 1.1em;
+}
 
-/* line 92, ../sass/all.scss */
+/* line 133, ../sass/all.scss */
 .table-footer-group {
   display: table-footer-group;
   background-color: #F1F1F1;
   font-weight: bold;
   border-top: 1px solid #e1e1e1;
+}
+/* line 138, ../sass/all.scss */
+.table-footer-group li {
+  font-size: 1.1em;
 }

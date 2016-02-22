@@ -3,11 +3,11 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Blog;
+
 use AppBundle\Form\BlogType;
+use AppBundle\Form\BlogEditType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\BrowserKit\Response;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -79,15 +79,54 @@ class BlogController extends Controller
     }
 
     /**
+     * 详情列表
      * @Route("/oneArticle/{id}",name="app_blog_oneArticle")
      */
     public function oneArticleAction($id)
     {
         $em = $this->getDoctrine()->getManager();
         $article = $em->getRepository('AppBundle:Blog')->findOneBy(['id' => $id]);
-        if(!$article) {
+        if (!$article) {
             return $this->redirectToRoute('app_blog_all');
         }
-        return $this->render('AppBundle:Blog:oneArticle.html.twig',['article'=> $article]);
+        return $this->render('AppBundle:Blog:oneArticle.html.twig', ['article' => $article]);
+    }
+
+    /**
+     * 编辑文章
+     * @Route("/edit/{id}",name="app_blog_edit")
+     */
+    public function editAction(Request $request, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $article = $em->getRepository('AppBundle:Blog')->findOneBy(['id' => $id]);
+        if (!$article) {
+            return $this->redirectToRoute('app_blog_all');
+        }
+        $blog = new Blog();
+        //生成 发表博文表单
+        $blog->setTitle($article->getTitle())->setContent($article->getContent());
+        $form = $this->createForm(BlogEditType::class,$blog);
+        $form->handleRequest($request);
+        if ($form->isValid()) {
+            $article->setTitle($blog->getTitle())->setContent($blog->getContent())->setDuedate(new \DateTime());
+            $em->flush();
+            return $this->redirectToRoute("app_blog_all");
+        }
+        return $this->render('AppBundle:Blog:edit.html.twig', ['form' => $form->createView(), 'article' => $article]);
+    }
+
+    /**
+     * @Route("/delete/{id}",name="app_blog_delete")
+     */
+    public function deleteAction($id) {
+        $em = $this->getDoctrine()->getManager();
+        $article = $em->getRepository('AppBundle:Blog')->findOneBy(['id' => $id]);
+        if(!$article){
+            return $this->redirectToRoute('app_blog_all');
+        }
+        $em->remove($article);
+        $em->flush();
+        return $this->redirectToRoute('app_blog_all');
     }
 }
