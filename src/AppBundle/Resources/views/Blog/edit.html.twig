@@ -23,3 +23,14 @@
 
     {{ form_end(form) }}
 {% endblock %}
+
+{% block script %}
+    <script src="{{ asset('js/tinymce.min.js') }}"></script>
+    <script>
+        tinymce.init({
+            selector: '#app_blog_type_content',
+            width: '800',
+            height: '250',
+        })
+    </script>
+{% endblock %}

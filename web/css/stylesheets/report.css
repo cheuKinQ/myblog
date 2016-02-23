@@ -60,19 +60,7 @@
   outline: none;
 }
 
-/* line 47, ../sass/report.scss */
-.row textarea {
-  text-indent: 2em;
-  width: 500px;
-  height: 250px;
-  font-size: 1.4em;
-  padding: 10px;
-  font-weight: 900;
-  outline-style: none;
-  outline: 1px solid blue;
-}
-
-/* line 58, ../sass/report.scss */
+/* line 48, ../sass/report.scss */
 .btn button {
   width: 90px;
   height: 50px;
@@ -82,26 +70,29 @@
   font-size: 1.5em;
 }
 
-/* line 67, ../sass/report.scss */
+/* line 57, ../sass/report.scss */
 .blog-form {
-  text-align: center;
   float: right;
-  width: 80%;
+  width: 70%;
   height: 50%;
-  margin-top: 50px;
+  margin-top: 55px;
+}
+/* line 62, ../sass/report.scss */
+.blog-form .blog-title {
+  margin-bottom: 19px;
+}
+/* line 65, ../sass/report.scss */
+.blog-form .row {
+  margin-bottom: 15px;
 }
 
-/* line 75, ../sass/report.scss */
-.blog-form div {
-  margin-bottom: 12px;
-}
-
-/* line 79, ../sass/report.scss */
-#form {
-  text-align: center;
-}
-
-/* line 83, ../sass/report.scss */
-#form div {
-  margin-bottom: 20px;
+/* line 70, ../sass/report.scss */
+.row textarea {
+  text-indent: 2em;
+  width: 500px;
+  height: 250px;
+  font-size: 1.4em;
+  padding: 10px;
+  font-weight: 900;
+  outline: 1px solid blue;
 }

@@ -44,16 +44,6 @@
     font-size: 1.4em;
     outline: none;
 }
-.row textarea{
-    text-indent: 2em;
-    width: 500px;
-    height: 250px;
-    font-size: 1.4em;
-    padding: 10px;
-    font-weight: 900;
-    outline-style: none;
-    outline: 1px solid blue;
-}
 
 .btn button{
     width: 90px;
@@ -64,25 +54,25 @@
     font-size: 1.5em;
 }
 
-.blog-form {
-    text-align: center;
+.blog-form{
     float: right;
-    width: 80%;
+    width: 70%;
     height: 50%;
-    margin-top: 50px;
+    margin-top: 55px;
+    .blog-title {
+        margin-bottom: 19px;
+    }
+    .row {
+        margin-bottom: 15px;
+    }
 }
 
-.blog-form div{
-    margin-bottom: 12px;
-}
-
-#form {
-    text-align: center;
-}
-
-#form div {
-    margin-bottom: 20px;
-}
-
-#form div:first-child {
+.row textarea{
+    text-indent: 2em;
+    width: 500px;
+    height: 250px;
+    font-size: 1.4em;
+    padding: 10px;
+    font-weight: 900;
+    outline: 1px solid blue;
 }

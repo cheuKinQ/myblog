@@ -3,7 +3,6 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Blog;
-
 use AppBundle\Form\BlogType;
 use AppBundle\Form\BlogEditType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -48,7 +47,7 @@ class BlogController extends Controller
         $pagination = $paginator->paginate(
             $query, /* query NOT result */
             $request->query->getInt('page', 1)/*page number*/,
-            2/*limit per page*/
+            3/*limit per page*/
         );
 
         // parameters to template
@@ -106,7 +105,7 @@ class BlogController extends Controller
         $blog = new Blog();
         //生成 发表博文表单
         $blog->setTitle($article->getTitle())->setContent($article->getContent());
-        $form = $this->createForm(BlogEditType::class,$blog);
+        $form = $this->createForm(BlogEditType::class, $blog);
         $form->handleRequest($request);
         if ($form->isValid()) {
             $article->setTitle($blog->getTitle())->setContent($blog->getContent())->setDuedate(new \DateTime());
@@ -119,10 +118,11 @@ class BlogController extends Controller
     /**
      * @Route("/delete/{id}",name="app_blog_delete")
      */
-    public function deleteAction($id) {
+    public function deleteAction($id)
+    {
         $em = $this->getDoctrine()->getManager();
         $article = $em->getRepository('AppBundle:Blog')->findOneBy(['id' => $id]);
-        if(!$article){
+            if (!$article) {
             return $this->redirectToRoute('app_blog_all');
         }
         $em->remove($article);
