@@ -15,7 +15,7 @@
         </div>
     </div>
     <div class="blog-updatetime">
-        最后编辑于{{ article.duedate|date("y年m月d日 h:i:s")}}
+        最后编辑于{{ article.duedate|date("y年m月d日 h:i:s") }}
     </div>
     <div class="btn">
         {{ form_row(form.submit) }}
@@ -27,10 +27,12 @@
 {% block script %}
     <script src="{{ asset('js/tinymce.min.js') }}"></script>
     <script>
-        tinymce.init({
-            selector: '#app_blog_type_content',
-            width: '800',
-            height: '250',
-        })
+        tinymce.init(
+                {
+                    selector: '#app_bundle_blog_edit_type_content',
+                    width: '800',
+                    height: '250',
+                    max_height: '315',
+                })
     </script>
 {% endblock %}
