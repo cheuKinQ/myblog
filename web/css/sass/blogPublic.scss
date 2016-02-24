@@ -1,64 +1,92 @@
 body {
-    background-color: #C7C3C3;
+  background-color: #C7C3C3;
 }
-.blog-header{
-    width: 80%;
-    float: right;
-    height: 23%;
+
+.blog-header {
+  width: 80%;
+  float: right;
+  height: 23%;
 }
 
 .blog-header p {
-    font-size: 1.3em;
-    margin-left: 51px;
-    color: #fff;
+  font-size: 1.3em;
+  margin-left: 51px;
+  color: #fff;
 }
+
 .blog-header h3 {
-    display: inline-block;
-    margin: 6% auto 22px 7%;
-    font-size: 2.5em;
-    color: #fff;
+  display: inline-block;
+  margin: 6% auto 22px 7%;
+  font-size: 2.5em;
+  color: #fff;
 }
 
 .blog-additional {
-    width: 20%;
-    height: 100%;
-    text-align: center;
-    float: left;
-    background-color: #1D4A82;
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  float: left;
+  background-color: #1D4A82;
 }
-.motto{
-    font-size: .6em;
+
+.motto {
+  font-size: .6em;
 }
 
 .blog-additional-userinfo {
-    width: 100%;
-    margin-top: 10%;
-    font-size: 1.8em;
+  width: 100%;
+  margin-top: 10%;
+  font-size: 1.8em;
 }
-
 
 .blog-additional-userinfo p {
-    display: inline-block;
-    color: #fff;
-    padding-top: 11px;
-    width: 60%;
+  display: inline-block;
+  color: #fff;
+  padding-top: 11px;
+  width: 60%;
 }
 
-.blog-additional-avatar img{
-    display: inline-block;
-    width: 120px;
-    margin-top: 10%;
-    height: 120px;
-    border-radius: 63px;
-    border: 4px solid #fff;
+.blog-additional-avatar img {
+  display: inline-block;
+  width: 120px;
+  margin-top: 10%;
+  height: 120px;
+  border-radius: 63px;
+  border: 4px solid #fff;
 }
 
-.nvg-ul li{
+.nvg-ul {
+  li {
     line-height: 64px;
-}
-
-.nvg-ul a{
+  }
+;
+  a {
     color: #fff;
     font-size: 1.4em;
     text-decoration: none;
+  }
+}
+
+.on {
+  background-color: #052D5F;
+  a {
+    color: #64A7FB;
+    text-decoration: none;
+  }
+}
+.on:after {
+  content: '';
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top: 387px;
+  right: 80%;
+  border-left: 10px solid transparent;
+  border-top: 11px solid transparent;
+  border-right: 11px solid #c7c3c3;
+  border-bottom: 10px solid transparent;
+}
+
+.change {
+  background-color: #171719;
 }

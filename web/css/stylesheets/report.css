@@ -85,14 +85,3 @@
 .blog-form .row {
   margin-bottom: 15px;
 }
-
-/* line 70, ../sass/report.scss */
-.row textarea {
-  text-indent: 2em;
-  width: 500px;
-  height: 250px;
-  font-size: 1.4em;
-  padding: 10px;
-  font-weight: 900;
-  outline: 1px solid blue;
-}

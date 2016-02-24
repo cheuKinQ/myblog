@@ -1,17 +1,18 @@
 /* line 1, ../sass/oneArticle.scss */
 .oneArticle {
-  width: 74%;
+  width: 55%;
   margin-top: 30px;
   margin-left: 30px;
+  margin-right: 20px;
   float: left;
 }
 
-/* line 8, ../sass/oneArticle.scss */
+/* line 9, ../sass/oneArticle.scss */
 .oneArticle h1 {
   font-size: 2.5em;
 }
 
-/* line 12, ../sass/oneArticle.scss */
+/* line 13, ../sass/oneArticle.scss */
 .article-info {
   width: 55%;
   margin-top: 20px;
@@ -19,26 +20,111 @@
   font-family: Montserrat, "Helvetica Neue", sans-serif;
   font-size: 1.2em;
 }
-/* line 18, ../sass/oneArticle.scss */
+/* line 19, ../sass/oneArticle.scss */
 .article-info span {
   margin-right: 26px;
 }
 
-/* line 23, ../sass/oneArticle.scss */
+/* line 24, ../sass/oneArticle.scss */
 .article-content {
   margin-top: 27px;
   text-indent: 2em;
 }
-/* line 26, ../sass/oneArticle.scss */
+/* line 27, ../sass/oneArticle.scss */
 .article-content p {
   font-size: 1.2em;
   letter-spacing: 2px;
   line-height: 19px;
 }
 
-/* line 34, ../sass/oneArticle.scss */
+/* line 35, ../sass/oneArticle.scss */
 .border {
   width: 65%;
   border: 2px solid;
   margin-top: 16px;
+}
+
+/* line 41, ../sass/oneArticle.scss */
+.article-additional {
+  width: 19%;
+  float: right;
+  height: 59%;
+  margin-top: 9%;
+}
+
+/* line 48, ../sass/oneArticle.scss */
+.article-search {
+  margin-right: 30px;
+  padding-top: 10px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  padding-bottom: 30px;
+}
+
+/* line 56, ../sass/oneArticle.scss */
+.search-write {
+  width: 73%;
+  display: inline-block;
+}
+/* line 59, ../sass/oneArticle.scss */
+.search-write input {
+  width: 100%;
+  height: 25px;
+  border: 1px solid #A58C8C;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  text-indent: 1.5em;
+  background-color: #EFEFEF;
+  outline-style: none;
+}
+
+/* line 71, ../sass/oneArticle.scss */
+.search-write input:focus {
+  background-color: #fff;
+  border: 1px solid #64A7FB;
+}
+
+/* line 76, ../sass/oneArticle.scss */
+.search-btn {
+  width: 24%;
+  display: inline-block;
+}
+/* line 79, ../sass/oneArticle.scss */
+.search-btn button {
+  width: 100%;
+  height: 25px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  position: relative;
+  left: -4px;
+  top: 1px;
+  outline-style: none;
+}
+
+/* line 94, ../sass/oneArticle.scss */
+.search-btn button:hover {
+  background-color: #303797;
+}
+
+/* line 98, ../sass/oneArticle.scss */
+.article-recent {
+  margin-right: 30px;
+  border-bottom: 2px solid;
+  padding-bottom: 30px;
+  margin-top: 14px;
+}
+
+/* line 107, ../sass/oneArticle.scss */
+.article-recent-title ul {
+  margin-top: 15px;
+  list-style: initial;
+  margin-left: 16px;
+}
+/* line 112, ../sass/oneArticle.scss */
+.article-recent-title ul li {
+  margin-bottom: 3px;
+  letter-spacing: 1px;
 }

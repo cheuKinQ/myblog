@@ -11,19 +11,20 @@
             <div class="table-column"></div>
             <div class="table-column"></div>
         </div>
+
         <div class="table-header-group">
             <ul class="table-row">
-                <li class="table-cell">{{ knp_pagination_sortable(pagination, '标题', ['a.title']) }}</li>
+                <li class="table-cell">{{ knp_pagination_sortable(pagination, '标题', ['Blog.title']) }}</li>
                 <li class="table-cell">作者</li>
-                <li class="table-cell">{{ knp_pagination_sortable(pagination, '发布日期', ['a.duedate']) }}</li>
+                <li class="table-cell">{{ knp_pagination_sortable(pagination, '发布日期', ['Blog.duedate']) }}</li>
                 <li class="table-cell">操作</li>
             </ul>
         </div>
         <div class="table-footer-group">
             <ul class="table-row">
-                <li class="table-cell">{{ knp_pagination_sortable(pagination, '标题', ['a.title']) }}</li>
+                <li class="table-cell">{{ knp_pagination_sortable(pagination, '标题', ['Blog.title']) }}</li>
                 <li class="table-cell">作者</li>
-                <li class="table-cell">{{ knp_pagination_sortable(pagination, '发布日期', ['a.duedate']) }}</li>
+                <li class="table-cell">{{ knp_pagination_sortable(pagination, '发布日期', ['Blog.duedate']) }}</li>
                 <li class="table-cell">操作</li>
             </ul>
         </div>
@@ -60,23 +61,14 @@
 
 {% endblock %}
 {% block script %}
-    {#<script type="text/javascript">#}
-        {#var ul = document.getElementById("all-info");#}
-        {#var li = ul.getElementsByTagName("li");#}
-        {#for (var i = 0; i < li.length; i++) {#}
-            {#li[i].onmouseover = function () {#}
-                {#for (var j = 0; j < li.length; j++) {#}
-                    {#li[j].className = "";#}
-                {#}#}
-                {#this.className = "on"#}
-            {#}#}
-            {#li[i].onmouseout = function () {#}
-                {#for (var j = 0; j < li.length; j++) {#}
-                    {#li[j].className = "";#}
-                {#}#}
-                {#this.className = ""#}
-            {#}#}
-        {#}#}
-    {#</script>#}
+    <script>
+        var G_CURRENT_MENU_ID = 'menuAllBlog'
+    </script>
 {% endblock script %}
+
+
+
+
+
+
 

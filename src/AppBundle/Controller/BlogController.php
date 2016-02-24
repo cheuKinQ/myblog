@@ -66,7 +66,6 @@ class BlogController extends Controller
         //生成 发表博文表单
         $form = $this->createForm(BlogType::class, $blog);
         $form->handleRequest($request);
-
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $username = $blog->setUsername($name = $this->getUser()->getUsername());
@@ -84,11 +83,17 @@ class BlogController extends Controller
     public function oneArticleAction($id)
     {
         $em = $this->getDoctrine()->getManager();
+
         $article = $em->getRepository('AppBundle:Blog')->findOneBy(['id' => $id]);
-        if (!$article) {
+        $sql = $em->getRepository('AppBundle:Blog')->createQueryBuilder('Blog');
+        $sql->orderBy('Blog.duedate','desc')
+            ->setMaxResults(3)
+            ->setFirstResult(0);
+        $recentArticle = $sql->getQuery()->getResult();
+        if (!$article || !$recentArticle) {
             return $this->redirectToRoute('app_blog_all');
         }
-        return $this->render('AppBundle:Blog:oneArticle.html.twig', ['article' => $article]);
+        return $this->render('AppBundle:Blog:oneArticle.html.twig', ['article' => $article,'recentArticle' => $recentArticle]);
     }
 
     /**
@@ -116,17 +121,37 @@ class BlogController extends Controller
     }
 
     /**
+     * 删除条目
      * @Route("/delete/{id}",name="app_blog_delete")
      */
     public function deleteAction($id)
     {
         $em = $this->getDoctrine()->getManager();
         $article = $em->getRepository('AppBundle:Blog')->findOneBy(['id' => $id]);
-            if (!$article) {
+        if (!$article) {
             return $this->redirectToRoute('app_blog_all');
         }
         $em->remove($article);
         $em->flush();
         return $this->redirectToRoute('app_blog_all');
+    }
+
+    /**
+     * @Route("/search",name="app_blog_search")
+     */
+    public function searchAction(Request $request)
+    {
+        $em = $this->get('doctrine.orm.entity_manager');
+        $info = $request->get('info');
+        $dql = $em->createQuery("select a from AppBundle:Blog a where a.title like :title order by a.duedate desc")
+                ->setParameter('title',"%$info%");
+        $query = $dql->getResult();
+        $paginator = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $query, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            3/*limit per page*/
+        );
+        return $this->render('AppBundle:Blog:all.html.twig', ['pagination' => $pagination]);
     }
 }

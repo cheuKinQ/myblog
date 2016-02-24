@@ -3,21 +3,21 @@ body {
   background-color: #C7C3C3;
 }
 
-/* line 4, ../sass/blogPublic.scss */
+/* line 5, ../sass/blogPublic.scss */
 .blog-header {
   width: 80%;
   float: right;
   height: 23%;
 }
 
-/* line 10, ../sass/blogPublic.scss */
+/* line 11, ../sass/blogPublic.scss */
 .blog-header p {
   font-size: 1.3em;
   margin-left: 51px;
   color: #fff;
 }
 
-/* line 15, ../sass/blogPublic.scss */
+/* line 17, ../sass/blogPublic.scss */
 .blog-header h3 {
   display: inline-block;
   margin: 6% auto 22px 7%;
@@ -25,7 +25,7 @@ body {
   color: #fff;
 }
 
-/* line 22, ../sass/blogPublic.scss */
+/* line 24, ../sass/blogPublic.scss */
 .blog-additional {
   width: 20%;
   height: 100%;
@@ -34,19 +34,19 @@ body {
   background-color: #1D4A82;
 }
 
-/* line 29, ../sass/blogPublic.scss */
+/* line 32, ../sass/blogPublic.scss */
 .motto {
   font-size: .6em;
 }
 
-/* line 33, ../sass/blogPublic.scss */
+/* line 36, ../sass/blogPublic.scss */
 .blog-additional-userinfo {
   width: 100%;
   margin-top: 10%;
   font-size: 1.8em;
 }
 
-/* line 40, ../sass/blogPublic.scss */
+/* line 42, ../sass/blogPublic.scss */
 .blog-additional-userinfo p {
   display: inline-block;
   color: #fff;
@@ -54,7 +54,7 @@ body {
   width: 60%;
 }
 
-/* line 47, ../sass/blogPublic.scss */
+/* line 49, ../sass/blogPublic.scss */
 .blog-additional-avatar img {
   display: inline-block;
   width: 120px;
@@ -64,14 +64,42 @@ body {
   border: 4px solid #fff;
 }
 
-/* line 56, ../sass/blogPublic.scss */
+/* line 59, ../sass/blogPublic.scss */
 .nvg-ul li {
   line-height: 64px;
 }
-
-/* line 60, ../sass/blogPublic.scss */
+/* line 63, ../sass/blogPublic.scss */
 .nvg-ul a {
   color: #fff;
   font-size: 1.4em;
   text-decoration: none;
+}
+
+/* line 70, ../sass/blogPublic.scss */
+.on {
+  background-color: #052D5F;
+}
+/* line 72, ../sass/blogPublic.scss */
+.on a {
+  color: #64A7FB;
+  text-decoration: none;
+}
+
+/* line 77, ../sass/blogPublic.scss */
+.on:after {
+  content: '';
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top: 387px;
+  right: 80%;
+  border-left: 10px solid transparent;
+  border-top: 11px solid transparent;
+  border-right: 11px solid #c7c3c3;
+  border-bottom: 10px solid transparent;
+}
+
+/* line 90, ../sass/blogPublic.scss */
+.change {
+  background-color: #171719;
 }

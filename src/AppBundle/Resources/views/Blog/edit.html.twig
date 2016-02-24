@@ -9,7 +9,8 @@
         </div>
     </div>
     <div class="row">
-        {{ form_widget(form.content,{'attr': {'placeholder': '请输入内容'}}) }}
+        {#这里通过编辑器编辑文本需要转译html#}
+        {{ form_widget(form.content|e,{'attr': {'placeholder': '请输入内容'}}) }}
         <div class="errors">
             {{ form_errors(form.content) }}
         </div>
@@ -33,6 +34,11 @@
                     width: '800',
                     height: '250',
                     max_height: '315',
+                    content_style: ".mce-content-body p {text-indent: 2em;font-size: 1.4em;}"
                 })
+    </script>
+    <script>
+        var content = document.getElementById("app_bundle_blog_edit_type_title");
+        alert(content.innerHTML);
     </script>
 {% endblock %}

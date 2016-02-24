@@ -5,16 +5,52 @@
         <h1>{{ article.title }}</h1>
         <div class="article-info">
             <span>作者: <a href="">{{ article.username }}</a></span>
-            <span>发布日期 : <a href="">{{ article.duedate|date ("Y-m-d H:i:s A") }}</a></span>
+            <span>发布日期 : <a href="">{{ article.duedate|date ("Y-m-d H:i:s") }}</a></span>
         </div>
         <div class="border"></div>
         <div class="article-content">
-            <p>{{ article.content }}</p>
+            <p>{{ article.content|e }}</p>
         </div>
     </div>
+    <div class="article-additional">
+        <div class="article-search">
+            <div class="search-write">
+                <input id="search-info" type="text" placeholder="搜索文章..."/>
+            </div>
+            <div class="search-btn">
+                <button id="search-btn" type="button">Search</button>
+            </div>
+        </div>
+        <div class="article-recent">
+            <h2>近期文章</h2>
+            <div class="article-recent-title">
+                <ul>
+                    {% for recentArticle in recentArticle%}
+                    <li><a href="{{ path('app_blog_oneArticle',{'id': recentArticle.id}) }}">{{ recentArticle.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
 
 {% block script %}
-
-{% endblock %}
+    <script>
+        $(function() {
+            $('#search-btn').on('click', function () {
+                var searchVal = $('#search-info').val();
+                if (searchVal == "") {
+                    layer.open({
+                        content: '请输入搜索内容..',
+                        time: 1.4
+                    });
+                    return;
+                } else {
+                    location.href = '{{ path('app_blog_search') }}?info=' + searchVal;
+                }
+            });
+        });
+    </script>
+{% endblock script %}
 

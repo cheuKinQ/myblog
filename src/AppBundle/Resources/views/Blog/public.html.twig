@@ -13,7 +13,7 @@
 <div class="blog">
     <div class="blog-header" style="background-image: url(http://pic2.ooopic.com/12/32/32/09bOOOPICe9_1024.jpg)">
         <h3>兴趣部落</h3>
-        <p>轻轻地来、轻轻地走.  --语自: 鲁迅</p>
+        <p>轻轻地来、轻轻地走. --语自: 鲁迅</p>
     </div>
     <div class="blog-additional">
         <div class="blog-additional-avatar"><img src="{{ asset('images/child.jpg') }}"></div>
@@ -22,13 +22,13 @@
             <P class="motto">人之初,性本善,性相近,习相远</P>
         </div>
         <div class="blog-additional-nvg" style="margin-top: 60px">
-            <ul class="nvg-ul">
-                <li><a href="javascript:0">主页</a></li>
-                <li><a href="{{ path('app_blog_all') }}">博文目录</a></li>
-                <li><a href="javascript:0">多媒体</a></li>
-                <li><a href="javascript:0">相册</a></li>
-                <li><a href="javascript:0">留言板</a></li>
-                <li><a href="{{ path('fos_user_security_logout') }}">登出</a></li>
+            <ul class="nvg-ul" id="nvg-ul">
+                <li id="menuHome"><a href="javascript:0">主页</a></li>
+                <li id="menuAllBlog"><a href="{{ path('app_blog_all') }}">博文目录</a></li>
+                <li id="menuMedia"><a href="javascript:0">多媒体</a></li>
+                <li id="forth"><a href="javascript:0">相册</a></li>
+                <li id="five"><a href="javascript:0">留言板</a></li>
+                <li id="menuSignOut"><a href="{{ path('fos_user_security_logout') }}">登出</a></li>
             </ul>
         </div>
     </div>
@@ -38,6 +38,12 @@
     <!-- 填充模板 - 结束 -->
     <!-- 以上为公共模板 (下部分) -->
 </div>
-    {% block script %}{% endblock script %}
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script src="http://qixi0910.b0.upaiyun.com/libs/layer_mobile/layer.m.js"></script>
+{% block script %}{% endblock script %}
+<script type="text/javascript">
+    var currentMenuEl = document.getElementById(G_CURRENT_MENU_ID)
+    currentMenuEl.className = 'on'
+</script>
 </body>
 </html>
